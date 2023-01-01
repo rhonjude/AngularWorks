@@ -1,0 +1,27 @@
+<form [formGroup] = "bookForm" (ngSubmit)="onSubmit()">
+    <div formArrayName="books">
+        <div *ngFor="let book of books().controls;let bookIndex=index">
+            <div [formGroupName]="bookIndex" style="border:1px solid blue;padding:10px;width:600px;margin:10px;">
+            {{bookIndex}}
+            <input placeholder="Enter the book name" type="text" class="form-control" name="bookName" id="bookName" formControlName="bookName">
+            <input placeholder="Enter the author name" type="text" class="form-control" name="authorName" id="authorName" formControlName="authorName">
+            <button (click)="removeBooks(bookIndex)">Remove Book</button>
+            <div formArrayName="publisher">
+                <div *ngFor ="let publ of bookPublisher(bookIndex).controls;let publisherIndex=index">
+                    <div [formGroupName]="publisherIndex">
+                        {{publisherIndex}}:
+                        <input class='form-control' type="text" name="publisherName" id="publisherName" placeholder="Publisher Name" formControlName="publisherName"/>
+                        <input class='form-control' type="email" name="email" id="email" placeholder="Publisher Email" formControlName="email"/>
+                        <button (click)="removePublisher(bookIndex,publisherIndex)">Remove Publisher</button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" (click)="addPublisher(bookIndex)">Add Publisher</button>
+        </div> 
+
+        </div>
+        <button type="button" (click)="addBooks()">Add Book</button>
+        <button type="button" (click)="onSubmit()">Submit</button>
+    </div>
+    </form>
+

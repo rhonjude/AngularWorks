@@ -1,0 +1,14 @@
+.error{
+    color: red;
+}
+form{
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 10px;
+    border: 4px solid orangered;
+    border-radius: 50px;
+    border-style: groove;
+    background-color: yellowgreen;
+    
+
+}

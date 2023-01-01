@@ -1,0 +1,14 @@
+<div>
+    {{pagetitle |repeat:3}} All !!
+
+
+</div>
+<div>
+    name:
+    <input type="text" id="name" [(ngModel)]="name"><br>
+    password:
+    <input type="password" id="pass" [(ngModel)]="pass"><br>
+
+    <button (click)="logClicked()">logIn</button>
+    {{msg}}
+</div>

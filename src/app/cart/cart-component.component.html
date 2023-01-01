@@ -1,0 +1,16 @@
+<h1>Shopping Cart</h1>
+<table class="table table-primary">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>quantity</th>
+        <th>Price</th>
+    </thead>
+    <tbody  *ngFor="let pro of productList">
+        <tr><td>{{pro.id}}</td>
+            <td>{{pro.name}}</td>
+            <td>{{pro.quantity}}</td>
+        <td>{{pro.price}}</td></tr>
+       
+    </tbody>
+</table>

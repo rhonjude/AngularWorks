@@ -1,0 +1,90 @@
+[{
+
+    "id":100,
+
+    "name":"Dance",
+
+    "date":"11-Dec-2022",
+
+    "time":"1.00PM",
+
+    "price":2000,
+
+    "imageUrl":"../assets/images/img1.jpg",
+
+    "location":{
+
+        "address":"akurdi",
+
+        "city":"pune",
+
+        "country":"india"
+
+    },
+
+    "sessions":{
+
+        "id":201,
+
+        "name":"jay",
+
+        "presenter":"sam",
+
+        "duration":"2Hours",
+
+        "level":"1st"
+
+        
+
+
+
+    }
+
+
+
+},
+{
+
+    "id":102,
+
+    "name":"Painting",
+
+    "date":"11-Dec-2022",
+
+    "time":"1.00PM",
+
+    "price":2000,
+
+    "imageUrl":"../assets/images/img1.jpg",
+
+    "location":{
+
+        "address":"akurdi",
+
+        "city":"pune",
+
+        "country":"india"
+
+    },
+
+    "sessions":{
+
+        "id":201,
+
+        "name":"jay",
+
+        "presenter":"sam",
+
+        "duration":"2Hours",
+
+        "level":"1st"
+
+        
+
+
+
+    }
+
+
+
+}]

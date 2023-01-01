@@ -1,0 +1,17 @@
+<!-- <div *ngIf(eventDetails)> -->
+    <h1>Event List</h1>
+    <div style="display: flex; flex-direction: row;padding: 20px; gap: 20px; justify-content: center;">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" *ngFor="let event of eventDetails">
+            <div class="card-header">ID:{{event.id}}</div>
+            <div class="card-body">
+    
+              <p class="card-text">Event Name:{{event.name}} <br>
+                               Event Price:{{event.price}}    <br>
+              </p>
+    
+            </div>
+          </div>
+    </div>
+    <h1 id="mssg">{{ message }}</h1>
+<!-- </div> -->
+

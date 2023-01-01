@@ -1,0 +1,56 @@
+
+
+<button class="btn btn-primary" (click)="clickAddProd()">Add Product</button>
+<div *ngIf="addProdFlag">
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Product Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="prodname" [(ngModel)]="pname">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Price</label>
+      <input type="text" class="form-control" name="prodprice" id="formGroupExampleInput2" [(ngModel)]="pprice" >
+    </div>
+    <button class="btn btn-primary" (click)="onAddProd()">Add</button>
+  </form>
+</div>
+<strong>{{messageStar}}</strong>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">filter by</label>
+    </div>
+
+    
+<input type="text" placeholder="search here"  class="form-control"  [(ngModel)]="prodname"/>
+    <table class="table table-hover table-success">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">price</th>
+            <th scope="col">Rating</th>
+            <th scope="col">image</th>
+            <th scope="col"><button class="btn btn-success" (click) = "imgvisible()">{{showImage?'Hide':'Show'}} Image</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of filteredProducts;let i = index">
+            <td>{{prod.id}}</td>
+            <td (click)="onNameClick(prod)">{{prod.name}}</td>
+            <td>{{prod.price|currency:'INR'}}</td>
+            <td><app-star-component (ratingclick)="handlerRating($event)" [rating]='prod.rating'></app-star-component></td>
+            <td><img *ngIf="showImage"
+                [style.width.px]="imageWidth"
+                [style.height.px]="imageHeight"
+                [src]='prod.imageUrl'/></td>
+                <td><button class="btn btn-danger" (click)="outputEvent(prod)" >Add To Cart</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="shoppingCart">
+        <app-cart-component [product1]="data()"></app-cart-component>
+    </div>
+    <div>
+        <button (click)="getProd()">Show</button>
+    </div>
+    <p id="newmsg">Hello Rhon</p>
